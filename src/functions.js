@@ -428,7 +428,7 @@ export function calcQueueMax(){
 }
 
 export function calcRQueueMax(){
-    let max_queue = 3;
+    let max_queue = 10;
     if (global.stats.feat['journeyman'] && global.stats.achieve['seeder'] && global.stats.achieve.seeder.l > 0){
         let rank = Math.min(global.stats.achieve.seeder.l,global.stats.feat['journeyman']);
         max_queue += rank >= 3 ? (rank >= 5 ? 3 : 2) : 1;
