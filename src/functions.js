@@ -412,6 +412,7 @@ export function removeFromRQueue(tech_trees){
 
 export function calcQueueMax(){
     let max_queue = global.tech['queue'] >= 2 ? (global.tech['queue'] >= 3 ? 8 : 5) : 3;
+    max_queue *= 2;
     if (global.stats.feat['journeyman'] && global.stats.feat['journeyman'] >= 2 && global.stats.achieve['seeder'] && global.stats.achieve.seeder.l >= 2){
         let rank = Math.min(global.stats.achieve.seeder.l,global.stats.feat['journeyman']);
         max_queue += rank >= 4 ? 2 : 1;
