@@ -3215,15 +3215,17 @@ export const plasmidBonus = (function (){
                 if (global.race['decayed']){
                     plasmids -= Math.round((global.stats.days - global.race.decayed) / (300 + global.race.gene_fortify * 6));
                 }
-                let p_cap = 250 + global.prestige.Phage.count;
+                let p_cap = 500 + global.prestige.Phage.count;
                 if (plasmids > p_cap){
-                    standard = (+((Math.log(p_cap + 50) - 3.91202)).toFixed(5) / 2.888) + ((Math.log(plasmids + 1 - p_cap) / Math.LN2 / 250));
+                    standard = (+((Math.log(p_cap + 50) - 3.91202)).toFixed(5) / 2.888) + ((Math.log(plasmids + 1 - p_cap) / Math.LN2 / 500));
+                    standard *= 2;
                 }
                 else if (plasmids < 0){
                     standard = 0;
                 }
                 else {
                     standard = +((Math.log(plasmids + 50) - 3.91202)).toFixed(5) / 2.888;
+                    standard *= 2;
                 }
                 if (global.tech['outpost_boost'] && global.race['truepath'] && p_on['alien_outpost']){
                     standard *= 2;
@@ -3241,15 +3243,17 @@ export const plasmidBonus = (function (){
                 if (global.race['decayed']){
                     plasmids -= Math.round((global.stats.days - global.race.decayed) / (300 + global.race.gene_fortify * 6));
                 }
-                let p_cap = 250 + global.prestige.Phage.count;
+                let p_cap = 500 + global.prestige.Phage.count;
                 if (plasmids > p_cap){
-                    anti = (+((Math.log(p_cap + 50) - 3.91202)).toFixed(5) / 2.888) + ((Math.log(plasmids + 1 - p_cap) / Math.LN2 / 250));
+                    anti = (+((Math.log(p_cap + 50) - 3.91202)).toFixed(5) / 2.888) + ((Math.log(plasmids + 1 - p_cap) / Math.LN2 / 500));
+                    anti *= 2;
                 }
                 else if (plasmids < 0){
                     anti = 0;
                 }
                 else {
                     anti = +((Math.log(plasmids + 50) - 3.91202)).toFixed(5) / 2.888;
+                    anti *= 2;
                 }
                 if (global.tech['outpost_boost'] && global.race['truepath'] && p_on['alien_outpost']){
                     anti *= 2;

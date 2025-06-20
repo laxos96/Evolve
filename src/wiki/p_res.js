@@ -814,13 +814,13 @@ function plasProdCalc(info,type){
             <span>${loc('wiki_calc_under_cap')}</span>
         </div>
         <div>
-            <span>(ln(</span><span v-show="s.bleed.vis">(</span><span>{{ i.plas.val, t | generic }} </span><span v-show="s.bleed.vis">/ {{ | bleedDiv }}) </span><span>+ 50) - 3.91202) / 2.888</span><span v-show="${type === 'anti'}"> / 3</span><span v-show="s.underResult.vis"> = {{ false | calcUnder }} = +{{ true | calcUnder }}%</span>
+            <span>(2*(ln(</span><span v-show="s.bleed.vis">(</span><span>{{ i.plas.val, t | generic }} </span><span v-show="s.bleed.vis">/ {{ | bleedDiv }}) </span><span>+ 50) - 3.91202) / 2.888)</span><span v-show="${type === 'anti'}"> / 3</span><span v-show="s.underResult.vis"> = {{ false | calcUnder }} = +{{ true | calcUnder }}%</span>
         </div>
         <div>
             <span>${loc('wiki_calc_over_cap')}</span>
         </div>
         <div>
-            <span>((((ln({{ i.phage.val, 'phage' | generic }} + 300) - 3.91202)) / 2.888) + ((ln(</span><span v-show="s.bleed.vis">(</span><span>{{ i.plas.val, t | generic }} </span><span v-show="s.bleed.vis">/ {{ | bleedDiv }}) </span><span>+ 1 - ({{ i.phage.val, 'phage' | generic }} + 250)) / ln2 / 250)))</span><span v-show="${type === 'anti'}"> / 3</span><span v-show="s.overResult.vis"> = {{ false | calcOver }} = +{{ true | calcOver }}%</span>
+            <span>(2*((((ln({{ i.phage.val, 'phage' | generic }} + 300) - 3.91202)) / 2.888) + ((ln(</span><span v-show="s.bleed.vis">(</span><span>{{ i.plas.val, t | generic }} </span><span v-show="s.bleed.vis">/ {{ | bleedDiv }}) </span><span>+ 1 - ({{ i.phage.val, 'phage' | generic }} + 500)) / ln2 / 500))))</span><span v-show="${type === 'anti'}"> / 3</span><span v-show="s.overResult.vis"> = {{ false | calcOver }} = +{{ true | calcOver }}%</span>
         </div>
     `);
     
@@ -886,7 +886,7 @@ function plasProdCalc(info,type){
                 return num === undefined ? 0 : show.bleed.vis ? num / (type === 'plasmid' ? 40 : 4) : num;
             },
             softcap(num){
-                return 250 + (num === undefined ? 0 : num);
+                return 500 + (num === undefined ? 0 : num);
             },
             bleedDiv(){
                 return type === 'plasmid' ? 40 : 4;
@@ -900,13 +900,13 @@ function plasProdCalc(info,type){
                     effective /= type === 'plasmid' ? 40 : 4;
                 }
                 let vis = true;
-                if (inputs.plas.val === undefined || effective > 250 + inputs.phage.val){
+                if (inputs.plas.val === undefined || effective > 500 + inputs.phage.val){
                     vis = false;
                 }
                 show.underResult.vis = vis;
                 
                 if (show.underResult.vis){
-                    let bonus = +((Math.log(effective + 50) - 3.91202)).toFixed(5) / 2.888;
+                    let bonus = +(2*((Math.log(effective + 50) - 3.91202)).toFixed(5) / 2.888);
                     if (type === 'anti'){
                         bonus /= 3;
                     }
@@ -924,13 +924,13 @@ function plasProdCalc(info,type){
                     effective /= type === 'plasmid' ? 40 : 4;
                 }
                 let vis = true;
-                if (inputs.phage.val === undefined || effective <= 250 + inputs.phage.val){
+                if (inputs.phage.val === undefined || effective <= 500 + inputs.phage.val){
                     vis = false;
                 }
                 show.overResult.vis = vis;
                 
                 if (show.overResult.vis){
-                    let bonus = (+((Math.log(250 + inputs.phage.val + 50) - 3.91202)).toFixed(5) / 2.888) + ((Math.log(effective + 1 - (250 + inputs.phage.val)) / Math.LN2 / 250));
+                    let bonus = (+(2*((Math.log(500 + inputs.phage.val + 50) - 3.91202)).toFixed(5) / 2.888) + ((Math.log(effective + 1 - (500 + inputs.phage.val)) / Math.LN2 / 500)));
                     if (type === 'anti'){
                         bonus /= 3
                     }

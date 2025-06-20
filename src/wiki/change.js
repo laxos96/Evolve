@@ -3,6 +3,23 @@ import { clearElement } from './../functions.js';
 
 export const changeList = [
     {
+        version: `1.5.1`,
+        date: `5/21/2025`,
+        changes: [
+            `Doubled plasmid softcap from 250 to 500.`,
+            `Doubled production bonus of plasmids.`,
+            `Doubled phage gain on reset.`
+        ]
+    },
+    {
+        version: `1.5.0`,
+        date: `5/20/2025`,
+        changes: [
+            `Sped up time by 5x.`,
+            `Duplicated research and building queue max values.`
+        ]
+    },
+    {
         version: `1.4.8`,
         date: `5/16/2025`,
         changes: [

@@ -1640,7 +1640,7 @@ export function calcPrestige(type,inputs){
     else {
         gains.plasmid = inputs.plas;
     }
-    gains.phage = gains.plasmid > 0 ? challenge_multiplier(Math.floor(Math.log2(gains.plasmid) * Math.E * phage_mult),type,false,inputs) : 0;
+    gains.phage = gains.plasmid > 0 ? 2 * challenge_multiplier(Math.floor(Math.log2(gains.plasmid) * Math.E * phage_mult),type,false,inputs) : 0;
 
     if (type === 'bigbang'){
         let exotic = inputs.exotic;
