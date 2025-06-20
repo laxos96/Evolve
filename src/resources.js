@@ -3045,7 +3045,7 @@ export const spatialReasoning = (function(){
                         plasmids += Math.round(global.prestige.Phage.count * (global.race['nerfed'] ? (1/3) : 1));
                     }
                 }
-                let divisor = global.genes.store >= 2 ? (global.genes.store >= 3 ? 1250 : 1666) : 2500;
+                let divisor = global.genes.store >= 2 ? (global.genes.store >= 3 ? 1250/2 : 1666/2) : 2500/2;
                 if (global.race.universe === 'antimatter'){
                     divisor *= 2;
                 }

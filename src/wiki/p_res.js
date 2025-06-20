@@ -1107,13 +1107,13 @@ function storeBonusCalc(info,type){
                     else {
                         switch (inputs.store.val){
                             case 1:
-                                show.result.val = (effective * 0.0004).toFixed(4);
+                                show.result.val = (effective * 0.0008).toFixed(4);
                                 break;
                             case 2:
-                                show.result.val = (effective * 0.0006).toFixed(4);
+                                show.result.val = (effective * 0.0012).toFixed(4);
                                 break;
                             default:
-                                show.result.val = (effective * 0.0008).toFixed(4);
+                                show.result.val = (effective * 0.0016).toFixed(4);
                                 break;
                         }
                     }

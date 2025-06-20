@@ -8,7 +8,8 @@ export const changeList = [
         changes: [
             `Doubled plasmid softcap from 250 to 500.`,
             `Doubled production bonus of plasmids.`,
-            `Doubled phage gain on reset.`
+            `Doubled phage gain on reset.`,
+            `Doubled storage bonus of plasmids`
         ]
     },
     {
