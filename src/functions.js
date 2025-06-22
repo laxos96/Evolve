@@ -1653,12 +1653,14 @@ export function calcPrestige(type,inputs){
         let new_dark = +(Math.log(1 + (exotic * 40))).toFixed(3);
         new_dark += +(Math.log2(mass - 7)/2.5).toFixed(3);
         new_dark = challenge_multiplier(new_dark,'bigbang',3,inputs);
+        new_dark *= 10;
         gains.dark = new_dark;
     }
     else if (type === 'vacuum'){
         let mana = inputs.mana !== undefined ? inputs.mana : global.resource.Mana.gen;
         let new_dark = +(Math.log2(mana)/5).toFixed(3);
         new_dark = challenge_multiplier(new_dark,'vacuum',3,inputs);
+        new_dark *= 10;
         gains.dark = new_dark;
     }
 

@@ -6,6 +6,15 @@ export const changeList = [
         version: `1.5.1`,
         date: `5/21/2025`,
         changes: [
+            `Fixed wiki calculations on improved resets.`,
+            `Fixed plasmid softcap resource tooltip.`,
+            `10x dark energy gains from resets.`
+        ]
+    },
+    {
+        version: `1.5.1`,
+        date: `5/21/2025`,
+        changes: [
             `Doubled plasmid softcap from 250 to 500.`,
             `Doubled production bonus of plasmids.`,
             `Doubled phage gain on reset.`,
