@@ -335,12 +335,12 @@ export function prestigeCalc(info,resource,extraType,resetType){
         case 'phage':
             resets.mad.use = false;
             resets.descend.use = false;
-            equation += `<span>log2({{ i.plas.val, 'plasmids' | generic }}) * {{ i.reset.val | phageMulti }} * e * {{ i.genes.val | challenge}} * {{ i.uni.val | universe }}</span><span v-show="i.tp.val"> * 1.1</span>`;
+            equation += `<span>log2({{ i.plas.val, 'plasmids' | generic }}) * {{ i.reset.val | phageMulti }} * e * {{ i.genes.val | challenge}} * {{ i.uni.val | universe }} * 2</span><span v-show="i.tp.val"> * 1.1 * 2</span>`;
             break;
         case 'dark':
             inputs.reset.val = 'bigbang';
             universes.magic.use = false;
-            equation += `<span>(ln(1 + ({{ i.exotic.val, 'exotic' | generic }} * 40)) + (log2({{ i.mass.val, 'mass' | generic }} - 7) / 2.5)) * {{ i.genes.val | challenge }} * {{ i.uni.val | universe }}</span>`;
+            equation += `<span>(ln(1 + ({{ i.exotic.val, 'exotic' | generic }} * 40)) + (log2({{ i.mass.val, 'mass' | generic }} - 7) / 2.5)) * {{ i.genes.val | challenge }} * {{ i.uni.val | universe }} * 10</span>`;
             break;
         case 'vacuum':
             inputs.reset.val = 'vacuum';
