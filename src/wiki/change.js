@@ -3,8 +3,16 @@ import { clearElement } from './../functions.js';
 
 export const changeList = [
     {
-        version: `1.5.1`,
-        date: `5/21/2025`,
+        version: `1.5.3`,
+        date: `6/30/2025`,
+        changes: [
+            `Doubled Hospital and Boot Camp resource effect.`,
+            `x100 manual gathering.`
+        ]
+    },
+    {
+        version: `1.5.2`,
+        date: `6/22/2025`,
         changes: [
             `Fixed wiki calculations on improved resets.`,
             `Fixed plasmid softcap resource tooltip.`,
@@ -13,7 +21,7 @@ export const changeList = [
     },
     {
         version: `1.5.1`,
-        date: `5/21/2025`,
+        date: `6/21/2025`,
         changes: [
             `Doubled plasmid softcap from 250 to 500.`,
             `Doubled production bonus of plasmids.`,
@@ -23,7 +31,7 @@ export const changeList = [
     },
     {
         version: `1.5.0`,
-        date: `5/20/2025`,
+        date: `6/20/2025`,
         changes: [
             `Sped up time by 5x.`,
             `Duplicated research and building queue max values.`

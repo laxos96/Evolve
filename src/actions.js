@@ -1133,6 +1133,7 @@ export const actions = {
             },
             val(spend){
                 let gain = global.race['strong'] ? traits.strong.vars()[0] : 1;
+                gain *= 100;
                 if (global.genes['enhance']){
                     gain *= 2;
                 }
@@ -1186,6 +1187,7 @@ export const actions = {
             },
             val(spend){
                 let gain = global.race['strong'] ? traits.strong.vars()[0] : 1;
+                gain *= 100;
                 if (global.genes['enhance']){
                     gain *= 2;
                 }
@@ -1237,6 +1239,7 @@ export const actions = {
             },
             val(spend){
                 let gain = global.race['strong'] ? traits.strong.vars()[0] : 1;
+                gain *= 100;
                 if (global.genes['enhance']){
                     gain *= 2;
                 }
@@ -1287,6 +1290,7 @@ export const actions = {
             },
             val(spend){
                 let gain = global.race['strong'] ? traits.strong.vars()[0] : 1;
+                gain *= 100;
                 if (global.genes['enhance']){
                     gain *= 2;
                 }
@@ -1319,6 +1323,7 @@ export const actions = {
             action(args){
                 if (!global.settings.pause){
                     let gain = global.race['strong'] ? traits.strong.vars()[0] : 1;
+                    gain *= 10;
                     if (global.genes['enhance']){
                         gain *= 2;
                     }
@@ -2034,6 +2039,7 @@ export const actions = {
             effect(){
                 let clinic = global.tech['reproduction'] && global.tech.reproduction >= 2 ? `<div>${loc('city_hospital_effect2')}</div>` : ``;
                 let healing = (global.tech['medic'] ?? 1) * 5;
+                healing *= 2;
                 let desc = `<div>${loc('city_hospital_effect',[healing])}</div>${clinic}`;
                 if (!global.race['artifical'] && global.race.hasOwnProperty('vax')){
                     desc = desc + `<div>${loc('tau_home_disease_lab_vax',[+global.race.vax.toFixed(2)])}</div>`;
@@ -2070,6 +2076,7 @@ export const actions = {
             },
             effect(){
                 let rate = global.tech['boot_camp'] >= 2 ? 8 : 5;
+                rate *= 2;
                 if (global.blood['lust']){
                     rate += global.blood.lust * 0.2;
                 }
